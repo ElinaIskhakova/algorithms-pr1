@@ -24,7 +24,9 @@ int main()
         cout << setw(2) << sorted_array[counter] << "  "; // вывод массива на экран
     }
     cout << "\n\n";
+    clock_t start=clock();
     Selection(sorted_array, size_array);
+    clock_t end=clock();
 double seconds=(double)(end-start)/CLOCKS_PER_SEC;
     for (int counter = 0; counter < size_array; counter++)
     {
@@ -36,25 +38,6 @@ double seconds=(double)(end-start)/CLOCKS_PER_SEC;
     system("pause");
     return 0;
 }
-
-/*void radix(int *ar, int *br, int *cr, int sizeC, int sizeAB)
-{
-    int i,k,n;
-    k = sizeC;
-    n = sizeAB;
-    for (i = 0; i <= k; i++)
-        cr[i]=0;
-    for (i = 0; i < n; i++)
-        cr[ar[i]]+=1;
-    for (i = 1; i < k+1; i++)
-        cr[i]+=cr[i-1];
-    for (i = n-1; i >= 0; i--)
-      {
-         br[cr[ar[i]]-1]=ar[i];
-         cr[ar[i]]-=1;
-      }
-  }
-*/
 void Selection(int* arrayPtr, int length_array) // сортировка выбором
 {
     for (int repeat_counter = 0; repeat_counter < length_array; repeat_counter++)
